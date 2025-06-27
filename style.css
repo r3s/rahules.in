@@ -1,0 +1,117 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden; /* Prevent overall page scrollbar */
+}
+
+body {
+    background: linear-gradient(to right, #232526, #414345);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 30px; /* Increased padding for content */
+    box-sizing: border-box; /* Include padding in height calculation */
+}
+
+header {
+    text-align: left;
+    padding: 20px 0;
+    font-size: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 25px; /* Add some space below the border */
+}
+
+main {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-grow: 1;
+    overflow: hidden; /* Prevent main from causing scrollbar */
+    align-items: flex-start; /* Align items to the start to prevent stretching */
+}
+
+#left.container {
+    padding: 20px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: none; /* Remove box shadow */
+}
+
+#right.container {
+    padding: 20px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: none; /* Remove box shadow */
+    height: 100%; /* Make it take full height of main */
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 15px; /* Add spacing below headings */
+}
+
+.todo-input-container {
+    display: flex;
+    align-items: center;
+    margin-top: auto; /* Pushes the input to the bottom */
+}
+
+#todo-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+#todo-list {
+    list-style: none;
+    padding: 0;
+    max-height: 200px; /* Fixed height for todo list */
+    overflow-y: auto; /* Adds scroll if content overflows */
+    margin-bottom: 10px; /* Add some space before input */
+    flex-shrink: 0; /* Prevent it from shrinking */
+}
+
+#todo-list li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+#todo-list li.done .todo-text {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+#todo-list li .todo-text {
+    cursor: pointer;
+    flex-grow: 1;
+    margin: 0 10px;
+}
+
+#todo-list li .delete-todo {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+#notes-editor {
+    flex-grow: 1; /* Allows the notes editor to take available space */
+    padding: 10px;
+    border: 1px solid #ccc;
+    overflow-y: auto;
+}
